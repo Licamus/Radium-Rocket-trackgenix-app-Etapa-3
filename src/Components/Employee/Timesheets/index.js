@@ -117,7 +117,7 @@ const Timesheets = () => {
     );
   } else {
     return (
-      <>
+      <div className={styles.container}>
         <div className={styles.container}>
           <h2>The user is not linked to any timesheets </h2>
         </div>
@@ -139,7 +139,7 @@ const Timesheets = () => {
             }}
           />
         </div>
-      </>
+      </div>
     );
   }
 };
