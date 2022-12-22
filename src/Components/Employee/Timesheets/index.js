@@ -117,9 +117,29 @@ const Timesheets = () => {
     );
   } else {
     return (
-      <div className={styles.container}>
-        <h2>The user is not linked to any timesheets </h2>
-      </div>
+      <>
+        <div className={styles.container}>
+          <h2>The user is not linked to any timesheets </h2>
+        </div>
+        <div className={styles.buttons}>
+          <Button
+            text="Go Back"
+            type="button"
+            variant="secondary"
+            onClick={() => {
+              history.goBack();
+            }}
+          />
+          <ButtonAdd
+            text="Add Timesheet"
+            type="submit"
+            variant="main"
+            onClick={() => {
+              history.push(`timesheets/form`);
+            }}
+          />
+        </div>
+      </>
     );
   }
 };
