@@ -47,9 +47,11 @@ const TimeSheets = () => {
   if (timeSheets.length > 0) {
     return (
       <div className={styles.container}>
-        <h1>TimeSheets</h1>
+        <h1>Timesheets</h1>
         <Table
-          data={getTableData()}
+          data={getTableData().map((element) => {
+            return { ...element, date: element.date.slice(0, 10) };
+          })}
           headers={headers}
           values={headers.map((header) => header.toLowerCase())}
           onDelete={onDelete}
